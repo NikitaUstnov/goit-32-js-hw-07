@@ -5,6 +5,7 @@ const ingredients = [
   "Помидоры",
   "Зелень",
   "Приправы",
+  "xfdlfh",
 ];
 
 // const ingredientsListRef = document
@@ -13,15 +14,10 @@ const ingredients = [
 //     "afterbegin",
 //     ingredients.map((ing) => `<li>${ing}</li>`).join(" ")
 //   );
+const ingredientsListRef = document.querySelector("#ingredients");
 
-// const listElement = ingredients.forEach((ing) => console.log(ing));
-
-const ingredientsListRef = document
-  .querySelector("#ingredients")
-  .insertAdjacentHTML(
-    "beforeend",
-    ingredients.forEach((ing) => document.createElement("li"))
-  );
-// const ingredientListEl = document.createElement("li");
-
-// console.log(ingredientListEl);
+ingredients.forEach((el) => {
+  const list = (ingredientsListRef.appendChild(
+    document.createElement("li")
+  ).innerHTML = el);
+});
