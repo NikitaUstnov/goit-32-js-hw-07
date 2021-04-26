@@ -5,18 +5,10 @@ const refs = {
   createArea: document.querySelector("#boxes"),
 };
 
-const divs = refs.inputQuontity.addEventListener("input", getQuontity);
-
-function getQuontity(e) {
-  let total = 0;
-
-  return (total += Number(e.target.value));
-}
-
-console.log(divs);
-
 function createBoxes(amount) {
-  for (let i = 0; i <= amount; i += 1) {
+  let total = Number(refs.inputQuontity.value);
+
+  for (let i = 0; i < total; i++) {
     refs.createArea.insertAdjacentElement(
       "beforeend",
       document.createElement("div")
@@ -24,6 +16,10 @@ function createBoxes(amount) {
   }
 }
 
-
+function destroyBoxes() {
+  refs.createArea.innerHTML = "";
+}
 
 refs.renderBtnEl.addEventListener("click", createBoxes);
+
+refs.destroyBtnEl.addEventListener("click", destroyBoxes);
