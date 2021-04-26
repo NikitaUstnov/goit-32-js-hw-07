@@ -5,11 +5,15 @@ const refs = {
   createArea: document.querySelector("#boxes"),
 };
 
-refs.inputQuontity.addEventListener("change", (e) => {
-  Number(e.target.value);
-});
+const divs = refs.inputQuontity.addEventListener("input", getQuontity);
 
-console.log(total);
+function getQuontity(e) {
+  let total = 0;
+
+  return (total += Number(e.target.value));
+}
+
+console.log(divs);
 
 function createBoxes(amount) {
   for (let i = 0; i <= amount; i += 1) {
@@ -20,6 +24,6 @@ function createBoxes(amount) {
   }
 }
 
-// createBoxes(value);
+
 
 refs.renderBtnEl.addEventListener("click", createBoxes);
