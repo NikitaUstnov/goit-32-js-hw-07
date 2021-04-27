@@ -12,10 +12,10 @@ function randomSize() {
   return 50 - 0.5 + Math.random() * (150 - 50 + 1);
 }
 
-function createBoxes(amount) {
+function createBoxes() {
   let total = Number(refs.inputQuontity.value);
 
-  for (let i = 0; i < total; i++) {
+  for (let i = 0; i < total; i += 1) {
     refs.createArea.insertAdjacentElement(
       "beforeend",
       document.createElement("div")
