@@ -21,6 +21,8 @@ function createBoxes(amount) {
     height: 100px;
       `;
   }
+
+  refs.inputQuontity.value = "";
 }
 
 function destroyBoxes() {
