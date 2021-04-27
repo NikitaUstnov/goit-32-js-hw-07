@@ -8,6 +8,10 @@ function randomColor() {
   return "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
 }
 
+function randomSize() {
+  return 50 - 0.5 + Math.random() * (150 - 50 + 1);
+}
+
 function createBoxes(amount) {
   let total = Number(refs.inputQuontity.value);
 
@@ -16,9 +20,10 @@ function createBoxes(amount) {
       "beforeend",
       document.createElement("div")
     ).style.cssText = `
-       background-color: ${randomColor()};
-    width: 100px;
-    height: 100px;
+    background-color: ${randomColor()};
+    width: ${randomSize()}px;
+    height: ${randomSize()}px;
+    margin: 10px;
       `;
   }
 
