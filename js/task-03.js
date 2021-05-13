@@ -12,7 +12,7 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-
+// первый способ
 const galleryList = document
   .querySelector("#gallery")
   .insertAdjacentHTML(
@@ -24,3 +24,22 @@ const galleryList = document
       )
       .join(" ")
   );
+
+// второй способ
+// const galleryList = document.querySelector("#gallery");
+
+// const makeGalleryList = ({ url, alt }) => {
+//   const listItem = document.createElement("li");
+//   console.log(listItem);
+//   const imgItem = document.createElement("img");
+//   imgItem.src = url;
+//   imgItem.alt = alt;
+//   imgItem.width = 150;
+
+//   listItem.appendChild(imgItem);
+
+//   return listItem;
+// };
+
+// const renderCard = images.map(makeGalleryList);
+// galleryList.append(...renderCard);
