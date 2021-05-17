@@ -13,33 +13,33 @@ const images = [
   },
 ];
 // первый способ
-const galleryList = document
-  .querySelector("#gallery")
-  .insertAdjacentHTML(
-    "afterBegin",
-    images
-      .map(
-        ({ url, alt }) =>
-          `<li><img src="${url}" width="300" alt="${alt}"/></li>`
-      )
-      .join(" ")
-  );
+// const galleryList = document
+//   .querySelector("#gallery")
+//   .insertAdjacentHTML(
+//     "afterBegin",
+//     images
+//       .map(
+//         ({ url, alt }) =>
+//           `<li><img src="${url}" width="300" alt="${alt}"/></li>`
+//       )
+//       .join(" ")
+//   );
 
 // второй способ
-// const galleryList = document.querySelector("#gallery");
+const galleryList = document.querySelector("#gallery");
 
-// const makeGalleryList = ({ url, alt }) => {
-//   const listItem = document.createElement("li");
-//   console.log(listItem);
-//   const imgItem = document.createElement("img");
-//   imgItem.src = url;
-//   imgItem.alt = alt;
-//   imgItem.width = 150;
+const makeGalleryList = ({ url, alt }) => {
+  const listItem = document.createElement("li");
+  console.log(listItem);
+  const imgItem = document.createElement("img");
+  imgItem.src = url;
+  imgItem.alt = alt;
+  imgItem.width = 150;
 
-//   listItem.appendChild(imgItem);
+  listItem.appendChild(imgItem);
 
-//   return listItem;
-// };
+  return listItem;
+};
 
-// const renderCard = images.map(makeGalleryList);
-// galleryList.append(...renderCard);
+const renderCard = images.map(makeGalleryList);
+galleryList.append(...renderCard);

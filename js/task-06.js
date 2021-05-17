@@ -11,10 +11,7 @@ validateInputRef.addEventListener("change", (e) => {
     validateInputRef.classList.add("valid");
   }
   if (value.length === 0) {
-    console.log("по идее стилей быть не должно");
     validateInputRef.classList.remove("invalid");
     validateInputRef.classList.remove("valid");
   }
-
-  console.log(value.length);
 });
