@@ -30,7 +30,7 @@ const galleryList = document.querySelector("#gallery");
 
 const makeGalleryList = ({ url, alt }) => {
   const listItem = document.createElement("li");
-  console.log(listItem);
+
   const imgItem = document.createElement("img");
   imgItem.src = url;
   imgItem.alt = alt;
