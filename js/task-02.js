@@ -5,7 +5,6 @@ const ingredients = [
   "Помидоры",
   "Зелень",
   "Приправы",
-  "xfdlfh",
 ];
 
 // const ingredientsListRef = document
@@ -16,8 +15,12 @@ const ingredients = [
 //   );
 const ingredientsListRef = document.querySelector("#ingredients");
 
-ingredients.forEach((el) => {
-  const list = (ingredientsListRef.appendChild(
-    document.createElement("li")
-  ).innerHTML = el);
+const ingredientsList = ingredients.map((el) => {
+  const ingredientElement = document.createElement("li");
+  ingredientElement.textContent = el;
+
+  return ingredientElement;
 });
+
+console.log(ingredientsList);
+ingredientsListRef.append(...ingredientsList);
